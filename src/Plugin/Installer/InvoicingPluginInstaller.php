@@ -19,13 +19,12 @@ class InvoicingPluginInstaller implements PluginInstallerInterface
     public function install(string $version): void
     {
         Process::fromShellCommandline(
-            "if [ ! -f config/packages/sylius_invoicing.yaml ]; then \\
-        cat << 'EOF' > config/packages/sylius_invoicing.yaml
-sylius_invoicing:
-    pdf_generator:
-        enabled: false
-EOF
-    fi"
+            "grep -Fq 'pdf_generator:' config/packages/sylius_invoicing.yaml || " .
+            "cat << 'EOF' >> config/packages/sylius_invoicing.yaml\n" .
+            "sylius_invoicing:\n" .
+            "    pdf_generator:\n" .
+            "        enabled: false\n" .
+            "EOF"
         )->run();
     }
 }
