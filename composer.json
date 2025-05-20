@@ -87,8 +87,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-2.0": "2.0-dev",
-            "dev-booster": "1.0-dev"
+            "dev-2.0": "2.0-dev"
         }
     },
     "prefer-stable": true
