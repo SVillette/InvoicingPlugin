@@ -75,7 +75,7 @@
         <service id="Sylius\InvoicingPlugin\Provider\UnitNetPriceProviderInterface" alias="sylius_invoicing.provider.unit_net_price" />
 
 
-        <service id="sylius_invoicing.plugin.installer" class="Sylius\InvoicingPlugin\Plugin\Installer\InvoicingPluginInstaller" public="false">
+        <service id="sylius_invoicing.plugin.installer" class="Sylius\InvoicingPlugin\Plugin\Installer\InvoicingPluginInstaller" public="true">
             <tag name="app.plugin_installer"/>
         </service>
     </services>
